@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+        }
+        .ascii-art {
+            white-space: pre;
+            font-size: 14px;
+            line-height: 1.2;
+            color: #ffaa00;
+            margin-bottom: 10px;
+            text-align: left;
+            display: inline-block;
+        }
+        .subtitle {
+            font-size: 22px;
+            color: #ffcc88;
+            margin: 10px 0 30px 0;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        input {
+            padding: 12px 20px;
+            font-size: 20px;
+            background: #222;
+            color: #fff;
+            border: 2px solid #555;
+            border-radius: 8px;
+            width: 250px;
+            outline: none;
+            transition: 0.3s;
+            font-family: Arial, sans-serif;
+        }
+        input:focus {
+            border-color: #ff4500;
+        }
+        .btn {
+            margin-top: 15px;
+            padding: 12px 30px;
+            font-size: 18px;
+            background: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: Arial, sans-serif;
+        }
+        .btn:hover {
+            background: #e03e00;
+        }
+        .error {
+            color: #ff4444;
+            margin-top: 15px;
+            font-size: 18px;
+            min-height: 30px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="ascii-art">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠙⠻⢶⣄⡀⠀⠀⠀⢀⣤⠶⠛⠛⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣇⠀⠀⣙⣿⣦⣤⣴⣿⣁⠀⠀⣸⠇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣡⣾⣿⣿⣿⣿⣿⣿⣿⣷⣌⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣷⣄⡈⢻⣿⡟⢁⣠⣾⣿⣦⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⠘⣿⠃⣿⣿⣿⣿⡏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠈⠛⣰⠿⣆⠛⠁⠀⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣦⠀⠘⠛⠋⠀⣴⣿⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣾⣿⣿⣿⣿⡇⠀⠀⠀⢸⣿⣏⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠀⠀⠀⠾⢿⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⡿⠟⠋⣁⣠⣤⣤⡶⠶⠶⣤⣄⠈⠀⠀⠀⠀⠀⠀
+⠀⠀⢰⣿⣿⣮⣉⣉⣉⣤⣴⣶⣿⣿⣋⡥⠄⠀⠀⠀⠀⠉⢻⣄⠀⠀⠀⠀⠀
+⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣋⣁⣤⣀⣀⣤⣤⣤⣤⣄⣿⡄⠀⠀⠀⠀
+⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠋⠉⠁⠀⠀⠀⠀⠈⠛⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </div>
+
+        <div class="subtitle">этой лисичке одиноко, где же может быть еще одна?</div>
+
+        <h1 style="font-family: Arial, sans-serif; font-weight: normal; font-size: 24px;">Введите пароль</h1>
+        <input type="password" id="passwordInput" placeholder="Пароль" autofocus>
+        <br>
+        <button class="btn" id="submitBtn">Войти</button>
+        <div class="error" id="errorMessage"></div>
+
+    </div>
+
+    <script>
+        const input = document.getElementById('passwordInput');
+        const error = document.getElementById('errorMessage');
+        const btn = document.getElementById('submitBtn');
+
+        // Ваши двоичные строки (без пробелов)
+        const binaryPhrase = "0111101110001110010010000000000001001011111111110000101101101101000001100001011010000110000101011011111110000001011100001000100100010101111011101000101011001010010001101111101111000111000000001100000001000101010011";
+        const binaryKey = "1111110111100010110001000100101110000001111101110100110001000101101110100000111100000000101101110100111111011110001011000100010010111000000111110111010011000100010110111010000011110000000101101110100111110000000001";
+
+        // Подсказка: зашифрованное слово "ВЕРНАМ" сдвигом Цезаря +14 (русский алфавит, без Ё)
+        // В->П, Е->Т, Р->Ю, Н->Ь, А->Н, М->Ъ
+        const hint = "ПТЮЬНЪ";
+
+        function checkPassword() {
+            const pwd = input.value.trim();
+            if (pwd === 'FIREFOX') {
+                const newWindow = window.open('', '_blank');
+                if (!newWindow) {
+                    error.textContent = 'Разрешите всплывающие окна для этого сайта.';
+                    return;
+                }
+                // Создаём новую страницу – только три строки
+                newWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>apache8722</title>
+                        <style>
+                            body {
+                                background: #000;
+                                color: #0f0;
+                                font-family: 'Courier New', monospace;
+                                padding: 40px;
+                                font-size: 18px;
+                                line-height: 2;
+                                margin: 0;
+                            }
+                            .hint-line {
+                                color: #ffaa00;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        ${binaryPhrase}<br>
+                        ${binaryKey}<br>
+                        <span class="hint-line">Подсказка: ${hint}</span>
+                        <script>
+                            // Добавляем хеш в адресную строку
+                            if (window.history && window.history.replaceState) {
+                                window.history.replaceState({}, '', window.location.pathname + '#apache8722');
+                            }
+                        <\/script>
+                    </body>
+                    </html>
+                `);
+                newWindow.document.close();
+
+                error.textContent = '';
+                input.value = '';
+            } else {
+                error.textContent = 'Неверный пароль. Попробуйте снова.';
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                checkPassword();
+            }
+        });
+
+        btn.addEventListener('click', checkPassword);
+    </script>
+</body>
+</html>
